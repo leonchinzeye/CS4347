@@ -1,0 +1,152 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     music_speech
+Instances:    128
+Attributes:   11
+              RMS_MEAN
+              PAR_MEAN
+              ZCR_MEAN
+              MAD_MEAN
+              MEAN_AD_MEAN
+              RMS_STD
+              PAR_STD
+              ZCR_STD
+              MAD_STD
+              MEAN_AD_STD
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.5310068014251765
+    Node 2    -2.955709900782057
+    Node 3    -2.976357163509327
+    Node 4    6.649644228546458
+    Node 5    -3.1876404962643643
+    Node 6    -4.05626845793558
+    Node 7    2.319015903371416
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.5195063852258925
+    Node 2    2.97524732351751
+    Node 3    2.942143992262022
+    Node 4    -6.645654793103079
+    Node 5    3.213956217862292
+    Node 6    4.037480239381693
+    Node 7    -2.339130408443077
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    0.4334965725426438
+    Attrib RMS_MEAN    -0.5507131379541538
+    Attrib PAR_MEAN    -1.2805024164259566
+    Attrib ZCR_MEAN    -0.0305390009971664
+    Attrib MAD_MEAN    -1.234777821816374
+    Attrib MEAN_AD_MEAN    -0.7955026502819299
+    Attrib RMS_STD    1.166140492344163
+    Attrib PAR_STD    3.5515959875015657
+    Attrib ZCR_STD    -0.04413246081349708
+    Attrib MAD_STD    0.7040104981445929
+    Attrib MEAN_AD_STD    1.2086490382235815
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    0.4197566918764341
+    Attrib RMS_MEAN    -0.6007627140832961
+    Attrib PAR_MEAN    -1.2731814404282575
+    Attrib ZCR_MEAN    0.03201780630162036
+    Attrib MAD_MEAN    -1.201595798358131
+    Attrib MEAN_AD_MEAN    -0.8309191238284797
+    Attrib RMS_STD    1.150341632760698
+    Attrib PAR_STD    3.5366794073807473
+    Attrib ZCR_STD    0.025468825247240465
+    Attrib MAD_STD    0.7350950108030377
+    Attrib MEAN_AD_STD    1.2209942827147313
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -1.4106651906099268
+    Attrib RMS_MEAN    0.9437111346154298
+    Attrib PAR_MEAN    3.71502746103011
+    Attrib ZCR_MEAN    0.04259685106621908
+    Attrib MAD_MEAN    2.432732272315323
+    Attrib MEAN_AD_MEAN    1.5387771467492808
+    Attrib RMS_STD    -2.58940612964882
+    Attrib PAR_STD    -7.31674531508129
+    Attrib ZCR_STD    -0.027938639478527795
+    Attrib MAD_STD    -1.762315630020542
+    Attrib MEAN_AD_STD    -2.786875395209928
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    0.5564053809787173
+    Attrib RMS_MEAN    -0.6125109229341456
+    Attrib PAR_MEAN    -1.4435309752084395
+    Attrib ZCR_MEAN    0.03355062157463565
+    Attrib MAD_MEAN    -1.2291794495173731
+    Attrib MEAN_AD_MEAN    -0.851082789277897
+    Attrib RMS_STD    1.3212818149530259
+    Attrib PAR_STD    3.800175257547115
+    Attrib ZCR_STD    -0.012766983080578387
+    Attrib MAD_STD    0.8673073101210638
+    Attrib MEAN_AD_STD    1.309561204075403
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    0.8748086286512525
+    Attrib RMS_MEAN    -0.5823411221543061
+    Attrib PAR_MEAN    -2.061261147035417
+    Attrib ZCR_MEAN    0.02401299820526416
+    Attrib MAD_MEAN    -1.4569320888735848
+    Attrib MEAN_AD_MEAN    -0.9739096593557899
+    Attrib RMS_STD    1.678517661282967
+    Attrib PAR_STD    4.719723289902536
+    Attrib ZCR_STD    -0.012014187263702715
+    Attrib MAD_STD    1.1144770790035967
+    Attrib MEAN_AD_STD    1.773655293089704
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.2243181516268673
+    Attrib RMS_MEAN    0.522453943437072
+    Attrib PAR_MEAN    0.7386199775508725
+    Attrib ZCR_MEAN    0.02133110393823469
+    Attrib MAD_MEAN    0.9987950503115554
+    Attrib MEAN_AD_MEAN    0.7320553266733864
+    Attrib RMS_STD    -0.8482208397508839
+    Attrib PAR_STD    -2.7637887425583827
+    Attrib ZCR_STD    0.018083602716106914
+    Attrib MAD_STD    -0.5071171652835962
+    Attrib MEAN_AD_STD    -0.8504339588657323
+Class music
+    Input
+    Node 0
+Class speech
+    Input
+    Node 1
+
+
+Time taken to build model: 0.21 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         123               96.0938 %
+Incorrectly Classified Instances         5                3.9063 %
+Kappa statistic                          0.9219
+Mean absolute error                      0.0454
+Root mean squared error                  0.1868
+Relative absolute error                  9.0803 %
+Root relative squared error             37.3369 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.953     0.031      0.968     0.953     0.961      0.986    music
+                 0.969     0.047      0.954     0.969     0.961      0.986    speech
+Weighted Avg.    0.961     0.039      0.961     0.961     0.961      0.986
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 61  3 |  a = music
+  2 62 |  b = speech
+

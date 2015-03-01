@@ -1,0 +1,56 @@
+=== Run information ===
+
+Scheme:weka.classifiers.rules.DecisionTable -X 1 -S "weka.attributeSelection.BestFirst -D 1 -N 5"
+Relation:     music_speech
+Instances:    128
+Attributes:   5
+              RMS
+              PAR
+              ZCR
+              MAD
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Decision Table:
+
+Number of training instances: 128
+Number of Rules : 5
+Non matches covered by Majority class.
+	Best first.
+	Start set: no attributes
+	Search direction: forward
+	Stale search after 5 node expansions
+	Total number of subsets evaluated: 10
+	Merit of best subset found:   82.813
+Evaluation (for feature selection): CV (leave one out) 
+Feature set: 2,4,5
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         102               79.6875 %
+Incorrectly Classified Instances        26               20.3125 %
+Kappa statistic                          0.5938
+Mean absolute error                      0.3087
+Root mean squared error                  0.3923
+Relative absolute error                 61.6979 %
+Root relative squared error             78.4208 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.797     0.203      0.797     0.797     0.797      0.832    music
+                 0.797     0.203      0.797     0.797     0.797      0.832    speech
+Weighted Avg.    0.797     0.203      0.797     0.797     0.797      0.832
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 51 13 |  a = music
+ 13 51 |  b = speech
+

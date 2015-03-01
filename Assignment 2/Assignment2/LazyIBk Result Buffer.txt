@@ -1,0 +1,46 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 3 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     music_speech
+Instances:    128
+Attributes:   5
+              RMS
+              PAR
+              ZCR
+              MAD
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 3 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         108               84.375  %
+Incorrectly Classified Instances        20               15.625  %
+Kappa statistic                          0.6875
+Mean absolute error                      0.2126
+Root mean squared error                  0.3593
+Relative absolute error                 42.4974 %
+Root relative squared error             71.8123 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.844     0.156      0.844     0.844     0.844      0.897    music
+                 0.844     0.156      0.844     0.844     0.844      0.897    speech
+Weighted Avg.    0.844     0.156      0.844     0.844     0.844      0.897
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 54 10 |  a = music
+ 10 54 |  b = speech
+

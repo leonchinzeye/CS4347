@@ -1,0 +1,5 @@
+From both classification algorithms, the MultilayerPerceptron algorithm under Functions gave a better result compared
+to the J48 algorithm under trees. This is because MultilayerPerceptron algorithm has a higher percentage of correctly
+classified instances compared to J48 (96% vs 94%). Also, for the rest of the results, it can be seen that J48 has a
+higher error value compared to the MultilayerPerceptron algorithm. Hence, the MultilayerPerceptron algorithm is a better
+classifier in this instance.

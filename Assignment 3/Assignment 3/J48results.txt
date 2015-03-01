@@ -1,0 +1,63 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     music_speech
+Instances:    128
+Attributes:   11
+              RMS_MEAN
+              PAR_MEAN
+              ZCR_MEAN
+              MAD_MEAN
+              MEAN_AD_MEAN
+              RMS_STD
+              PAR_STD
+              ZCR_STD
+              MAD_STD
+              MEAN_AD_STD
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+PAR_STD <= 0.633063: music (60.0)
+PAR_STD > 0.633063
+|   PAR_STD <= 0.735065
+|   |   PAR_STD <= 0.728739: speech (11.0/2.0)
+|   |   PAR_STD > 0.728739: music (2.0)
+|   PAR_STD > 0.735065: speech (55.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         121               94.5313 %
+Incorrectly Classified Instances         7                5.4688 %
+Kappa statistic                          0.8906
+Mean absolute error                      0.0629
+Root mean squared error                  0.2253
+Relative absolute error                 12.5783 %
+Root relative squared error             45.0278 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.922     0.031      0.967     0.922     0.944      0.967    music
+                 0.969     0.078      0.925     0.969     0.947      0.967    speech
+Weighted Avg.    0.945     0.055      0.946     0.945     0.945      0.967
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 59  5 |  a = music
+  2 62 |  b = speech
+

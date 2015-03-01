@@ -1,0 +1,4 @@
+Among the 3 classifier algorithms used, the best one would be the IBk classifier. This is because
+it has the highest percentage when it comes to correctly classified instances. This means that given
+the data, the classifier was able to correctly classify the files according to their {music, speech}
+types. The next best one would be the J48 classifier, followed by the Decision Table classifier.
