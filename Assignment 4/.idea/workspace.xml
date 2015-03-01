@@ -27,8 +27,8 @@
       <file leaf-file-name="ground_truth.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ground_truth.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.0169492" vertical-offset="360" max-vertical-offset="2355">
-              <caret line="143" column="37" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.8305085" vertical-offset="15" max-vertical-offset="2355">
+              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
               <folding>
                 <element signature="e#21#33#0" expanded="true" />
               </folding>
@@ -273,7 +273,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1390" height="1295" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -327,8 +327,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ground_truth.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0169492" vertical-offset="360" max-vertical-offset="2355">
-          <caret line="143" column="37" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.8305085" vertical-offset="15" max-vertical-offset="2355">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
           <folding>
             <element signature="e#21#33#0" expanded="true" />
           </folding>
