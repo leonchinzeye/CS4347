@@ -131,11 +131,18 @@ def readFile(fileName):
 Function to write to a file of CSV type
 """
 def writeToFile():
-    newFile = open("answers.arff", "w")
+    newFile = open("results.arff", "w")
+
+    # newFile.write("@RELATION music_speech\n")
+    # newFile.write("@ATTRIBUTE SC_MEAN\n@ATTRIBUTE SRO_MEAN\n@ATTRIBUTE SFM_MEAN\n@ATTRIBUTE PARFFT_MEAN\n@ATTRIBUTE FLUX_MEAN\n")
+    # newFile.write("@ATTRIBUTE SC_STD\n@ATTRIBUTE SRO_STD\n@ATTRIBUTE SFM_STD\n@ATTRIBUTE PARFFT_STD\n@ATTRIBUTE FLUX_STD\n")
+    # newFile.write("@ATTRIBUTE class {music,speech}\n")
+    # newFile.write("\n")
+    # newFile.write("@DATA\n")
 
     newFile.write("@RELATION music_speech\n")
-    newFile.write("@ATTRIBUTE SC_MEAN\n@ATTRIBUTE SRO_MEAN\n@ATTRIBUTE SFM_MEAN\n@ATTRIBUTE PARFFT_MEAN\n@ATTRIBUTE FLUX_MEAN\n")
-    newFile.write("@ATTRIBUTE SC_STD\n@ATTRIBUTE SRO_STD\n@ATTRIBUTE SFM_STD\n@ATTRIBUTE PARFFT_STD\n@ATTRIBUTE FLUX_STD\n")
+    newFile.write("@ATTRIBUTE SC_MEAN NUMERIC\n@ATTRIBUTE SRO_MEAN NUMERIC\n@ATTRIBUTE SFM_MEAN NUMERIC\n@ATTRIBUTE PARFFT_MEAN NUMERIC\n@ATTRIBUTE FLUX_MEAN NUMERIC\n")
+    newFile.write("@ATTRIBUTE SC_STD NUMERIC\n@ATTRIBUTE SRO_STD NUMERIC\n@ATTRIBUTE SFM_STD NUMERIC\n@ATTRIBUTE PARFFT_STD NUMERIC\n@ATTRIBUTE FLUX_STD NUMERIC\n")
     newFile.write("@ATTRIBUTE class {music,speech}\n")
     newFile.write("\n")
     newFile.write("@DATA\n")

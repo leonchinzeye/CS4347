@@ -1,0 +1,152 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     music_speech
+Instances:    128
+Attributes:   11
+              SC_MEAN
+              SRO_MEAN
+              SFM_MEAN
+              PARFFT_MEAN
+              FLUX_MEAN
+              SC_STD
+              SRO_STD
+              SFM_STD
+              PARFFT_STD
+              FLUX_STD
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.5033136995184945
+    Node 2    -4.344817105935911
+    Node 3    -1.7139585683935754
+    Node 4    5.586640877099302
+    Node 5    -7.772396453056351
+    Node 6    -5.52366191471562
+    Node 7    4.641295113905305
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.49181154082808326
+    Node 2    4.372339215706731
+    Node 3    1.6942209688763104
+    Node 4    -5.587238059274931
+    Node 5    7.769639533175579
+    Node 6    5.507981126511844
+    Node 7    -4.64689779024242
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -2.785925472327093
+    Attrib SC_MEAN    1.3543361142220491
+    Attrib SRO_MEAN    0.9591244992542409
+    Attrib SFM_MEAN    1.5623363941764892
+    Attrib PARFFT_MEAN    -2.9279171487385938
+    Attrib FLUX_MEAN    -1.9273700308356525
+    Attrib SC_STD    1.890610726304951
+    Attrib SRO_STD    -1.8574428233886764
+    Attrib SFM_STD    1.665376436269186
+    Attrib PARFFT_STD    1.687635420441188
+    Attrib FLUX_STD    2.9179676661845316E-4
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.12862443878015772
+    Attrib SC_MEAN    0.5099585130052446
+    Attrib SRO_MEAN    0.37838717345345896
+    Attrib SFM_MEAN    -0.21931886275111023
+    Attrib PARFFT_MEAN    -0.7434201010806892
+    Attrib FLUX_MEAN    -0.4788445227342875
+    Attrib SC_STD    0.8859042726261558
+    Attrib SRO_STD    -1.2440265357864813
+    Attrib SFM_STD    1.3339738107721375
+    Attrib PARFFT_STD    0.7092935668356406
+    Attrib FLUX_STD    0.12940026882562844
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.18742293020403472
+    Attrib SC_MEAN    -0.9824133500472634
+    Attrib SRO_MEAN    -0.7124014785735588
+    Attrib SFM_MEAN    1.3566737762558287
+    Attrib PARFFT_MEAN    0.797265779296143
+    Attrib FLUX_MEAN    1.8298762717948138
+    Attrib SC_STD    -2.4256543482268595
+    Attrib SRO_STD    4.462378390048222
+    Attrib SFM_STD    -3.8079549807186126
+    Attrib PARFFT_STD    -4.495829634457995
+    Attrib FLUX_STD    -0.4737078135424456
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.7223763911667512
+    Attrib SC_MEAN    -0.13292824411423754
+    Attrib SRO_MEAN    -1.0505762076751803
+    Attrib SFM_MEAN    -4.694229204193462
+    Attrib PARFFT_MEAN    1.1091022560943535
+    Attrib FLUX_MEAN    0.233254884118458
+    Attrib SC_STD    3.8288227173140656
+    Attrib SRO_STD    -5.531142122634416
+    Attrib SFM_STD    5.447245087959771
+    Attrib PARFFT_STD    5.67790870898357
+    Attrib FLUX_STD    2.113345859314984
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -3.502411617849567
+    Attrib SC_MEAN    1.5949235902385774
+    Attrib SRO_MEAN    1.0718827719222983
+    Attrib SFM_MEAN    2.1437946793852145
+    Attrib PARFFT_MEAN    -3.5586091322466986
+    Attrib FLUX_MEAN    -2.5270256913875886
+    Attrib SC_STD    2.0673343661850154
+    Attrib SRO_STD    -2.175440428133565
+    Attrib SFM_STD    1.692268002391465
+    Attrib PARFFT_STD    2.271895645813356
+    Attrib FLUX_STD    0.007007404721664541
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    0.4902664315705292
+    Attrib SC_MEAN    0.32598500226090543
+    Attrib SRO_MEAN    0.9238926688624881
+    Attrib SFM_MEAN    3.197373223374406
+    Attrib PARFFT_MEAN    -0.7325681679323844
+    Attrib FLUX_MEAN    -0.5712644102443779
+    Attrib SC_STD    -2.3527693800907787
+    Attrib SRO_STD    3.857725090673278
+    Attrib SFM_STD    -3.1094444729488186
+    Attrib PARFFT_STD    -3.3812415819084425
+    Attrib FLUX_STD    -1.7184980357040118
+Class music
+    Input
+    Node 0
+Class speech
+    Input
+    Node 1
+
+
+Time taken to build model: 0.15 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         119               92.9688 %
+Incorrectly Classified Instances         9                7.0313 %
+Kappa statistic                          0.8594
+Mean absolute error                      0.0947
+Root mean squared error                  0.2513
+Relative absolute error                 18.9358 %
+Root relative squared error             50.2301 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.953     0.094      0.91      0.953     0.931      0.971    music
+                 0.906     0.047      0.951     0.906     0.928      0.971    speech
+Weighted Avg.    0.93      0.07       0.931     0.93      0.93       0.971
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 61  3 |  a = music
+  6 58 |  b = speech
+

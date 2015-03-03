@@ -1,0 +1,54 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.KStar -B 20 -M a
+Relation:     music_speech
+Instances:    128
+Attributes:   11
+              SC_MEAN
+              SRO_MEAN
+              SFM_MEAN
+              PARFFT_MEAN
+              FLUX_MEAN
+              SC_STD
+              SRO_STD
+              SFM_STD
+              PARFFT_STD
+              FLUX_STD
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a  
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         115               89.8438 %
+Incorrectly Classified Instances        13               10.1563 %
+Kappa statistic                          0.7969
+Mean absolute error                      0.107 
+Root mean squared error                  0.2946
+Relative absolute error                 21.3974 %
+Root relative squared error             58.884  %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.875     0.078      0.918     0.875     0.896      0.96     music
+                 0.922     0.125      0.881     0.922     0.901      0.96     speech
+Weighted Avg.    0.898     0.102      0.899     0.898     0.898      0.96 
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 56  8 |  a = music
+  5 59 |  b = speech
+

@@ -1,0 +1,9 @@
+From the 3 classifications algorithm used, "MultilayerPerceptron - Functions" provided the best result, followed by
+"J48 - Trees", and finally "KStar - Lazy".
+
+This is because MultilayerPerceptron, it has the highest percentage for correctly classified instances. Furthermore it
+has the lowest percentage of error values among all the 3 algorithms. Hence it is the best out of the 3.
+Following that would be J48. It has a almost similar percentage of correctly classified instances. However, the
+values for the errors are comparatively higer than MultilayerPerceptron. Hence, it is the 2nd best algorithm
+The worst algorithm out the 3 would be KStar. This is because it has the lowest percentage of correctly classified
+instances. Also, the error values are the highest among the 3.
