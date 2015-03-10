@@ -15,13 +15,14 @@ wavNameList = []
 labelList = []
 bufferLength = 1024
 numBuffers = 661500 / bufferLength * 2
+numWindows = 26
 resultList = numpy.zeros((128, 10))
 
 # main driver function
 def main():
     readFile(GROUND_TRUTH_DATA)
     performWAVCalculations()
-    writeToFile()
+    # writeToFile()
 
 
 """
@@ -33,9 +34,13 @@ def performWAVCalculations():
     bufferMatrix = numpy.zeros((numBuffers, bufferLength))
     hammingMatrix = numpy.zeros((numBuffers, bufferLength))
 
-    for i in range(0, len(wavNameList)):
+    for i in range(0, 1):
         rate, data = wavfile.read("music_speech/" + wavNameList[i])
         data = data / DIVIDE_NUMBER
+        data = addPreEmphasis(data)
+
+        mel_interval = melFunction(rate)
+
 
         for j in range(numBuffers):
             start = j * (bufferLength / 2)
@@ -47,75 +52,27 @@ def performWAVCalculations():
         dftMatrix = fftpack.fft(hammingMatrix, axis = 1)
         dftMatrix = numpy.abs(dftMatrix[:, 0:bufferLength / 2 + 1])
 
-        featuresMatrix = numpy.zeros((numBuffers, 5))
-        featuresMatrix[:,0] = calculateSC(dftMatrix)
-        featuresMatrix[:,1] = numpy.apply_along_axis(calculateSRO, 1, dftMatrix)
-        featuresMatrix[:,2] = calculateSFM(dftMatrix)
-        featuresMatrix[:,3] = calculatePARFFT(dftMatrix)
-        featuresMatrix[:,4] = calculateSF(dftMatrix)
+def addPreEmphasis(data):
+    temp = numpy.delete(data, len(data) - 1)
+    temp = numpy.insert(temp, [0.0], 0)
+    return data - 0.95 * temp
 
-        resultMatrix = numpy.zeros(10)
-        resultMatrix[0:5] = numpy.mean(featuresMatrix, axis = 0)
-        resultMatrix[5:10] = numpy.std(featuresMatrix, axis = 0)
+def calcMelInterval(rate):
+    nyquistLimit = rate / 2.0
+    return melFunction(nyquistLimit) / (numWindows + 1)         # 26 windows, need to consider the last point             
 
-        resultList[i, :] = resultMatrix
+def melFunction(frequency):
+    return 1127 * math.log(1 + frequency / 700)
 
+def melFunctionInverse(mel):
+    return 700 * (math.exp(mel / 1127) - 1)    
 
-"""
-Function to calculate spectral centroid
-"""
-def calculateSC(data):
-    arrayK = numpy.indices((numBuffers, bufferLength / 2 + 1))
-    answer = numpy.sum(data * arrayK[1], axis = 1) / numpy.sum(data, axis = 1)
+def calcMagSpec(data, hammingWindow):
+    fft = numpy.fft.fft(data)
+    fft = fft[:len(fft) / 2 + 1]
+    magfft = abs(fft) / (numpy.sum(hammingWindow) / 2.0)
+    return magfft
 
-    return answer
-
-
-"""
-Function to calculate the spectral roll-off
-"""
-def calculateSRO(data):
-    comparedNumber = numpy.sum(data) * 0.85
-    calcSum = 0
-
-    for i in range(0, len(data)):
-        calcSum += data[i]
-
-        if calcSum >= comparedNumber:
-            return i
-
-
-"""
-Function to calculate the spectral flatness measure
-"""
-def calculateSFM(data):
-    answer = numpy.exp(numpy.mean(numpy.log(data), axis = 1)) / numpy.mean(data, axis = 1)
-
-    return answer
-
-
-"""
-Function to calculate the PARFFT
-"""
-def calculatePARFFT(data):
-    answer = numpy.amax(data, axis = 1) / numpy.sqrt(numpy.mean(numpy.square(data), axis = 1))
-
-    return answer
-
-
-"""
-Function to calculate the spectral flux
-"""
-def calculateSF(data):
-    arrayN_1 = numpy.vstack([numpy.zeros(data.shape[1]), data[:-1]])
-    answer = numpy.sum((data - arrayN_1).clip(0), axis = 1)
-
-    return answer
-
-    
-"""
-Function to read file
-"""
 def readFile(fileName):
     file = open(fileName, "r")
 
@@ -126,19 +83,8 @@ def readFile(fileName):
 
     file.close()
 
-
-"""
-Function to write to a file of CSV type
-"""
 def writeToFile():
     newFile = open("results.arff", "w")
-
-    # newFile.write("@RELATION music_speech\n")
-    # newFile.write("@ATTRIBUTE SC_MEAN\n@ATTRIBUTE SRO_MEAN\n@ATTRIBUTE SFM_MEAN\n@ATTRIBUTE PARFFT_MEAN\n@ATTRIBUTE FLUX_MEAN\n")
-    # newFile.write("@ATTRIBUTE SC_STD\n@ATTRIBUTE SRO_STD\n@ATTRIBUTE SFM_STD\n@ATTRIBUTE PARFFT_STD\n@ATTRIBUTE FLUX_STD\n")
-    # newFile.write("@ATTRIBUTE class {music,speech}\n")
-    # newFile.write("\n")
-    # newFile.write("@DATA\n")
 
     newFile.write("@RELATION music_speech\n")
     newFile.write("@ATTRIBUTE SC_MEAN NUMERIC\n@ATTRIBUTE SRO_MEAN NUMERIC\n@ATTRIBUTE SFM_MEAN NUMERIC\n@ATTRIBUTE PARFFT_MEAN NUMERIC\n@ATTRIBUTE FLUX_MEAN NUMERIC\n")
