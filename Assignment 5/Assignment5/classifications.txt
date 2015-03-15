@@ -1,0 +1,18 @@
+The 3 classification algorithms that I've chosen to work with are:
+	- J48 under Trees
+	- BayesianLogisticRegression under Bayes
+	- LWL under Lazy
+
+From these 3 classification algorithms, the best algorithm would be J48, followed by LWL and finally 
+BayesianLogisticRegression.
+
+As seen from the result buffer, the J48 algorithm has the highest value for the percentage of correctly
+classified instances - 93.75%. The LWL algorithm obtained a value of 92.1875%, and the BayesianLogistic-
+Regression obtained a value of 88.2813%.
+
+Under the J48 algorithm, the relative absolute error and the root relative squared error is the smallest
+amongst all 3 algorithms, which corresponds to my opinion of the best algorithm. For the LWL algorithm,
+it actually has a higher avlue for the relative absolute error as compared to the BayesianLogisticRegression
+algorithm. However, the root relative squared error for the BayesianLogisticRegression is much higher 
+than the LWL algorithm. Hence, the LWL algorithm is better the BayesianLogisticRegression when it comes to
+performing classifications.

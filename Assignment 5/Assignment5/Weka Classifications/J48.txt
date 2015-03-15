@@ -1,0 +1,107 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     music_speech
+Instances:    128
+Attributes:   53
+              MFCC_0
+              MFCC_1
+              MFCC_2
+              MFCC_3
+              MFCC_4
+              MFCC_5
+              MFCC_6
+              MFCC_7
+              MFCC_8
+              MFCC_9
+              MFCC_10
+              MFCC_11
+              MFCC_12
+              MFCC_13
+              MFCC_14
+              MFCC_15
+              MFCC_16
+              MFCC_17
+              MFCC_18
+              MFCC_19
+              MFCC_20
+              MFCC_21
+              MFCC_22
+              MFCC_23
+              MFCC_24
+              MFCC_25
+              MFCC_26
+              MFCC_27
+              MFCC_28
+              MFCC_29
+              MFCC_30
+              MFCC_31
+              MFCC_32
+              MFCC_33
+              MFCC_34
+              MFCC_35
+              MFCC_36
+              MFCC_37
+              MFCC_38
+              MFCC_39
+              MFCC_40
+              MFCC_41
+              MFCC_42
+              MFCC_43
+              MFCC_44
+              MFCC_45
+              MFCC_46
+              MFCC_47
+              MFCC_48
+              MFCC_49
+              MFCC_50
+              MFCC_51
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+MFCC_31 <= 2.290949
+|   MFCC_51 <= 0.485682
+|   |   MFCC_3 <= -1.399455: speech (6.0)
+|   |   MFCC_3 > -1.399455: music (4.0)
+|   MFCC_51 > 0.485682: music (57.0)
+MFCC_31 > 2.290949
+|   MFCC_13 <= 1.029311: speech (57.0)
+|   MFCC_13 > 1.029311: music (4.0/1.0)
+
+Number of Leaves  : 	5
+
+Size of the tree : 	9
+
+
+Time taken to build model: 0.05 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         120               93.75   %
+Incorrectly Classified Instances         8                6.25   %
+Kappa statistic                          0.875 
+Mean absolute error                      0.0665
+Root mean squared error                  0.2437
+Relative absolute error                 13.2958 %
+Root relative squared error             48.7038 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.938     0.063      0.938     0.938     0.938      0.953    music
+                 0.938     0.063      0.938     0.938     0.938      0.953    speech
+Weighted Avg.    0.938     0.063      0.938     0.938     0.938      0.953
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 60  4 |  a = music
+  4 60 |  b = speech
+

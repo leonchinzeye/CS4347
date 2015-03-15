@@ -1,0 +1,96 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.LWL -U 0 -K -1 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\"" -W weka.classifiers.trees.DecisionStump
+Relation:     music_speech
+Instances:    128
+Attributes:   53
+              MFCC_0
+              MFCC_1
+              MFCC_2
+              MFCC_3
+              MFCC_4
+              MFCC_5
+              MFCC_6
+              MFCC_7
+              MFCC_8
+              MFCC_9
+              MFCC_10
+              MFCC_11
+              MFCC_12
+              MFCC_13
+              MFCC_14
+              MFCC_15
+              MFCC_16
+              MFCC_17
+              MFCC_18
+              MFCC_19
+              MFCC_20
+              MFCC_21
+              MFCC_22
+              MFCC_23
+              MFCC_24
+              MFCC_25
+              MFCC_26
+              MFCC_27
+              MFCC_28
+              MFCC_29
+              MFCC_30
+              MFCC_31
+              MFCC_32
+              MFCC_33
+              MFCC_34
+              MFCC_35
+              MFCC_36
+              MFCC_37
+              MFCC_38
+              MFCC_39
+              MFCC_40
+              MFCC_41
+              MFCC_42
+              MFCC_43
+              MFCC_44
+              MFCC_45
+              MFCC_46
+              MFCC_47
+              MFCC_48
+              MFCC_49
+              MFCC_50
+              MFCC_51
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Locally weighted learning
+===========================
+Using classifier: weka.classifiers.trees.DecisionStump
+Using linear weighting kernels
+Using all neighbours
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         118               92.1875 %
+Incorrectly Classified Instances        10                7.8125 %
+Kappa statistic                          0.8438
+Mean absolute error                      0.1286
+Root mean squared error                  0.2631
+Relative absolute error                 25.7112 %
+Root relative squared error             52.5824 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.938     0.094      0.909     0.938     0.923      0.958    music
+                 0.906     0.063      0.935     0.906     0.921      0.958    speech
+Weighted Avg.    0.922     0.078      0.922     0.922     0.922      0.958
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 60  4 |  a = music
+  6 58 |  b = speech
+

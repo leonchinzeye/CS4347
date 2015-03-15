@@ -1,0 +1,159 @@
+=== Run information ===
+
+Scheme:weka.classifiers.bayes.BayesianLogisticRegression -D -Tl 5.0E-4 -S 0.5 -H 1 -V 0.27 -R R:0.01-316,3.16 -P 1 -F 2 -seed 1 -I 100 -N
+Relation:     music_speech
+Instances:    128
+Attributes:   53
+              MFCC_0
+              MFCC_1
+              MFCC_2
+              MFCC_3
+              MFCC_4
+              MFCC_5
+              MFCC_6
+              MFCC_7
+              MFCC_8
+              MFCC_9
+              MFCC_10
+              MFCC_11
+              MFCC_12
+              MFCC_13
+              MFCC_14
+              MFCC_15
+              MFCC_16
+              MFCC_17
+              MFCC_18
+              MFCC_19
+              MFCC_20
+              MFCC_21
+              MFCC_22
+              MFCC_23
+              MFCC_24
+              MFCC_25
+              MFCC_26
+              MFCC_27
+              MFCC_28
+              MFCC_29
+              MFCC_30
+              MFCC_31
+              MFCC_32
+              MFCC_33
+              MFCC_34
+              MFCC_35
+              MFCC_36
+              MFCC_37
+              MFCC_38
+              MFCC_39
+              MFCC_40
+              MFCC_41
+              MFCC_42
+              MFCC_43
+              MFCC_44
+              MFCC_45
+              MFCC_46
+              MFCC_47
+              MFCC_48
+              MFCC_49
+              MFCC_50
+              MFCC_51
+              class
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Norm-Based Hyperparameter Selection: 0.05703392789550027
+
+Regression Coefficients
+=========================
+
+(intercept) : 0.0065357329768180455
+MFCC_0 : -0.06431242429537962
+MFCC_1 : -0.16676927441991504
+MFCC_2 : -0.026849522316989324
+MFCC_3 : -0.04404436587643754
+MFCC_4 : 0.22690104098279215
+MFCC_5 : -0.08856278343897897
+MFCC_6 : -0.09558712019578476
+MFCC_7 : 0.07001936790452704
+MFCC_8 : 0.08692003973750197
+MFCC_9 : 0.012488825755292842
+MFCC_10 : 0.0431795827514104
+MFCC_11 : -0.07586834312939253
+MFCC_12 : -0.09894964578401763
+MFCC_13 : -0.09892965140023793
+MFCC_14 : -0.1722585383047533
+MFCC_15 : -0.023237126195913144
+MFCC_16 : -0.13163269494658889
+MFCC_17 : -0.04604644376915632
+MFCC_18 : -0.041355998748676084
+MFCC_19 : 0.05240534262721605
+MFCC_20 : 0.006614322494060485
+MFCC_21 : 0.03571029274657282
+MFCC_22 : 0.03925092312246054
+MFCC_23 : -0.014872573434438738
+MFCC_24 : 0.006596326812092171
+MFCC_25 : 0.03892632180390266
+MFCC_26 : 0.008847698785636722
+MFCC_27 : 0.07763942233489127
+MFCC_28 : -0.10124773074653493
+MFCC_29 : 0.10086288478142302
+MFCC_30 : 0.07766597896555694
+MFCC_31 : 0.07220848266021818
+MFCC_32 : -0.006033791409076531
+MFCC_33 : -0.050048096731941744
+MFCC_34 : -0.11028875031474344
+MFCC_35 : -0.08381711996102963
+MFCC_36 : -0.11743982037228234
+MFCC_37 : -0.13463500751267213
+MFCC_38 : -0.12390492772213149
+MFCC_39 : -0.08307416484851328
+MFCC_40 : -0.08823578585108471
+MFCC_41 : -0.10190674143317686
+MFCC_42 : -0.07151670354884737
+MFCC_43 : -0.08801766822786908
+MFCC_44 : -0.08266584030891133
+MFCC_45 : -0.07170963849017169
+MFCC_46 : -0.053042238023537545
+MFCC_47 : -0.05167777406312634
+MFCC_48 : -0.03953853727839889
+MFCC_49 : -0.01595373010966713
+MFCC_50 : -0.04007095612103085
+MFCC_51 : -0.08404587701047976
+===========================
+
+Likelihood: -1837.6118811804965
+
+Penalty: 24.42649836488898
+
+Regularized Log Posterior: -1813.1853828156075
+===========================
+
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         113               88.2813 %
+Incorrectly Classified Instances        15               11.7188 %
+Kappa statistic                          0.7656
+Mean absolute error                      0.1172
+Root mean squared error                  0.3423
+Relative absolute error                 23.425  %
+Root relative squared error             68.4267 %
+Total Number of Instances              128     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.828     0.063      0.93      0.828     0.876      0.883    music
+                 0.938     0.172      0.845     0.938     0.889      0.883    speech
+Weighted Avg.    0.883     0.117      0.887     0.883     0.882      0.883
+
+=== Confusion Matrix ===
+
+  a  b   <-- classified as
+ 53 11 |  a = music
+  4 60 |  b = speech
+
