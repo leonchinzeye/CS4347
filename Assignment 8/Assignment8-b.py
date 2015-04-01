@@ -20,21 +20,29 @@ def main():
 	freq1_vanilla_size2 = useLutGetWaves(size2, freq1)
 	freq2_vanilla_size2 = useLutGetWaves(size2, freq2)
 
+	freq1_linear_size1 = useLutGetLinear(size1, freq1)
+	freq2_linear_size1 = useLutGetLinear(size1, freq2)
+
+	freq1_linear_size2 = useLutGetLinear(size2, freq1)
+	freq2_linear_size2 = useLutGetLinear(size2, freq2)
+
 	perfect_sine_wave_freq1 = calcSineWave(freq1)
 	perfect_sine_wave_freq2 = calcSineWave(freq2)
 
-	plotWave(freq1_vanilla_size1, "100.0Hz - LUT size: 16384", "100.0Hz - LUT size: 16384.png")
-	plotWave(freq1_vanilla_size2, "100.0Hz - LUT size: 2048", "100.0Hz - LUT size: 2048.png")
+	plotWave(freq1_vanilla_size1, freq1_linear_size1, perfect_sine_wave_freq1, "100.0Hz - LUT size = 16384", "100.0Hz - LUT size = 16384.png")
+	plotWave(freq1_vanilla_size2, freq1_linear_size2, perfect_sine_wave_freq1, "100.0Hz - LUT size = 2048", "100.0Hz - LUT size = 2048.png")
 
-	plotWave(freq2_vanilla_size1, "1234.56Hz - LUT size: 16384", "1234.56Hz - LUT size: 16384.png")
-	plotWave(freq2_vanilla_size2, "1234.56Hz - LUT size: 2048", "1234.56Hz - LUT size: 2048.png")
+	plotWave(freq2_vanilla_size1, freq2_linear_size1, perfect_sine_wave_freq2, "1234.56Hz - LUT size = 16384", "1234.56Hz - LUT size = 16384.png")
+	plotWave(freq2_vanilla_size2, freq2_linear_size2, perfect_sine_wave_freq2, "1234.56Hz - LUT size = 2048", "1234.56Hz - LUT size = 2048.png")
 
-def plotWave(data, title, fileName):
+def plotWave(data1, data2, data3, title, fileName):
 	plot.figure(figsize = (18, 8))
 	plot.title(title)
 	plot.xlabel("Time(Samples)")
 	plot.ylabel("Amplitude")
-	plot.plot(data, label = "no interpolation")
+	plot.plot(data1, label = "no linear")
+	plot.plot(data2, label = "with linear")
+	plot.plot(data3, label = "perfect")
 	plot.xlim(0, 240)
 	plot.legend(loc = 1)
 	plot.savefig(fileName)
@@ -46,6 +54,14 @@ def useLutGetWaves(sample_size, freq):
 	delta_phi = freq / fs * sample_size
 
 	return genBufferOutputVanilla(sample_size, delta_phi, lut)
+
+def useLutGetLinear(sample_size, freq):
+	lut = np.zeros(sample_size)
+	lut = createLookUpTable(sample_size)
+
+	delta_phi = freq / fs * sample_size
+
+	return genBufferOutputLinear(sample_size, delta_phi, lut)
 
 def genBufferOutputVanilla(sample_size, delta_phi, lut):
 	phase = 0.0
@@ -60,16 +76,16 @@ def genBufferOutputVanilla(sample_size, delta_phi, lut):
 
 	return buff
 
-def genBufferOutputLinear(sample_size, phase_increment, lut):
-	result = numpy.zeros(0)
+def genBufferOutputLinear(sample_size, delta_phi, lut):
+	result = np.zeros(0)
 	
 	for i in range(sample_size):
-		x0 = np.floor(i * phase_increment)
-		x1 = (x0 + 1) % len(lut)
-		y0 = lut(x0)
-		y1 = lut(x1)
+		x0 = np.floor(i * delta_phi % sample_size)
+		x1 = (x0 + 1) % sample_size
+		y0 = lut[x0]
+		y1 = lut[x1]
 
-		result = np.concatenate((result, y0 + (y1 - y0) * (phase_increment - x0) / (x1 - x0)))
+		result = np.append(result, y0 + (y1 - y0) * ((i * delta_phi % sample_size) - x0) / (x1 - x0))
 
 	return result
 
@@ -80,8 +96,8 @@ def createLookUpTable(sample_size):
 	return lut
 
 def calcSineWave(freq, duration = duration, amplitude = 1.0, phase = 0.0):
-	sineArray = np.arange(int(duration * sampling_rate))
-	sineArray = amplitude * np.sin(phase + 2.0 * numpy.pi * (freq / fs) * sineArray)
+	sineArray = np.arange(int(duration * fs))
+	sineArray = amplitude * np.sin(phase + 2.0 * np.pi * (freq / fs) * sineArray)
 	return sineArray
 
 main()
