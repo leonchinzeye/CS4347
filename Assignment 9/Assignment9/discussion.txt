@@ -1,0 +1,13 @@
+In the original audio, you can clearly hear the lady speaking with the 
+articulation of each word being very clear. However, in the reconstructed audio,
+you still can hear the words that the lady is speaking. But the speech is not
+as clear as it is missing out the "noise/irregularities" in the words that she's 
+speaking.
+
+The reconstructed audio has gone through a FIR filter, which has resulted in this 
+difference.
+
+Some of the frequencies of the frames are not being represented in the 
+reconstructed spectrogram due to the filter being applied. In the spectrogram 
+belonging to original wave, the frequencies from the irregularities can be seen
+clearly.
